@@ -1,0 +1,17 @@
+<ion-header color="primary">
+  <ion-toolbar>
+    <ion-title>
+      Productos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-button (click)="obtenerProducts()">Obtener Productos</ion-button>
+  <ion-list *ngIf="products">
+    <ion-item *ngFor="let product of products.Productos">
+      <h2> {{product.name}}</h2>
+      <p>{{product.detail}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>
