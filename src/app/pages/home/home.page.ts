@@ -8,7 +8,7 @@ import { RestService } from '../../services/rest.service';
 })
 export class HomePage  {
   token: any;
-  products: any;
+  articles: any;
 
   constructor(public restService: RestService) {
     this.hacerLogin();
@@ -20,10 +20,10 @@ export class HomePage  {
     })
   }
 
-  obtenerProducts(){
-    this.restService.getProducts(this.token)
+  obtenerArticles(){
+    this.restService.getArticles(this.token)
       .then(data => {
-        this.products = data;
+        this.articles = data;
       });
   }
   
