@@ -7,31 +7,37 @@ import { RestService } from '../../services/rest.service';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
-export class Tab1Page implements OnInit{
+export class Tab1Page {
 
   token: any;
   articles: any;
 
-  constructor(public restService: RestService) {
+  constructor(public restService: RestService,) {
     this.hacerLogin();
+    this.obtenerArticles();
+   
+    
   }
-  ngOnInit() {
-    this.restService.getTopHeadlines()
-    .subscribe(resp => {
-    console.log('articles', resp);
-    });
-    }
+ 
   hacerLogin(){
-    this.restService.login().then(data => {
+    this.restService.login('raulreyes@gmail.com','123456').then(data => {
+      console.log(data);
       this.token = data;
-    })
+    });
   }
 
-  // obtenerArticles(){
-  //   this.restService.getArticles(this.token)
-  //     .then(data => {
-  //       this.articles = data;
-  //     });
+    obtenerArticles(){
+    this.restService.getArticles()
+      .then((res: any) => {
+        if (res.success) {
+          this.articles = res.data;
+          console.log(this.articles);
+        }
+      },
+      (error) =>{
+        console.error(error);
+      }
+     );}
   }
   
 
