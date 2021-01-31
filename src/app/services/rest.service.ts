@@ -5,6 +5,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
   providedIn: "root",
 })
 export class RestService {
+  
   apiUrl = "https://allsites.es/sales_in_api/public/api";
   token: any;
 
@@ -23,6 +24,24 @@ export class RestService {
         }
       );
     });
+  }
+
+  getOffers() {
+    var header = new HttpHeaders({ "Content-Type": "application/json"});
+    header.append("Authorization","Bearer " + this.token);
+    console.log("Bearer "+this.token);
+    return new Promise((resolve) => {
+      this.http.get(this.apiUrl + "/offers", { headers: header}).subscribe(
+        (data) => {
+          console.log(data);
+          resolve(data);
+        },
+        (err) => {
+          console.log(err)
+        }
+      );
+    });
+    
   }
   login(email:String, password:String) {
     return new Promise((resolve) => {

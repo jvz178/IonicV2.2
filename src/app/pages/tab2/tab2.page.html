@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Ofertas
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,19 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">Ofertas</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-item *ngFor="let offer of offers">
+      <h2>{{offer.headline}}</h2>
+      <p>{{offer.description}}</p>
+      <p>Id ciclo: </p>
+      <p>{{offer.cicle_id}}</p>
+      <p>Fecha maxima: </p>
+      <p>{{offer.date_max}}</p>
+      <p>Numero de candidatos: </p>
+      <p>{{offer.num_candidates}}</p>
+    </ion-item>
+
 </ion-content>
