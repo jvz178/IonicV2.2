@@ -27,8 +27,11 @@ export class RestService {
   }
 
   getOffers() {
+    var header = new HttpHeaders({ "Content-Type": "application/json"});
+    header.append("Authorization","Bearer " + this.token);
+    console.log("Bearer "+this.token);
     return new Promise((resolve) => {
-      this.http.get(this.apiUrl + "/offers", {}).subscribe(
+      this.http.get(this.apiUrl + "/offers", { headers: header}).subscribe(
         (data) => {
           console.log(data);
           resolve(data);
@@ -38,7 +41,7 @@ export class RestService {
         }
       );
     });
-    //throw new Error('Method not implemented.');
+    
   }
   login(email:String, password:String) {
     return new Promise((resolve) => {

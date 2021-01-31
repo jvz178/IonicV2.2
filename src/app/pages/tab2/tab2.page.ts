@@ -13,7 +13,6 @@ export class Tab2Page {
 
   constructor(public restService: RestService,) {
     this.hacerLogin();
-    this.mandarInfo();
     this.obtenerOfertas();
   }
 
@@ -22,10 +21,6 @@ export class Tab2Page {
       console.log(data);
       this.token = data;
     });
-  }
-
-  mandarInfo(){
-
   }
 
   obtenerOfertas(){
