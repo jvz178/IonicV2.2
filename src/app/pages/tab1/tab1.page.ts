@@ -9,22 +9,22 @@ import { RestService } from '../../services/rest.service';
 })
 export class Tab1Page {
 
-  token: any;
+  // token: any;
   articles: any;
 
   constructor(public restService: RestService,) {
-    this.hacerLogin();
+    // this.hacerLogin();
     this.obtenerArticles();
    
     
   }
  
-  hacerLogin(){
-    this.restService.login('raulreyes@gmail.com','123456').then(data => {
-      console.log(data);
-      this.token = data;
-    });
-  }
+  // hacerLogin(){
+  //   this.restService.login('raulreyes@gmail.com','123456').then(data => {
+  //     console.log(data);
+  //     this.token = data;
+  //   });
+  // }
 
     obtenerArticles(){
     this.restService.getArticles()

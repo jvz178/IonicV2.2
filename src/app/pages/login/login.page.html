@@ -1,0 +1,31 @@
+<ion-header no-border trasnlucent>
+  <ion-toolbar color="light">
+  <ion-title text-capitalize>LOGIN</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-card>
+ <ion-img src="/assets/img/salesin.png"></ion-img>
+ <ion-card-content>
+ </ion-card-content>
+</ion-card>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>
+      Email
+    </ion-label>
+    <ion-input type="text" [(ngModel)]="user.email" name="email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>
+      Contraseña
+    </ion-label>
+  <ion-input type="password" [(ngModel)]="user.password" name="password"></ion-input>
+  </ion-item>
+  <ion-item-divider>
+    <ion-button size="medium" (click)="hacerLogin()" expand="block">Inicio Sesion</ion-button>
+    <ion-button size="medium" href="/register">Nuevo usuario</ion-button>
+  </ion-item-divider>
+</ion-content>
