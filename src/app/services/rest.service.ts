@@ -1,5 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
+//import { registerLocaleData } from "@angular/common";
+//import { resolve } from "dns";
 
 @Injectable({
   providedIn: "root",
@@ -42,6 +44,27 @@ export class RestService {
     });
     
   }
+
+  register(name:String, surname:String, email:String, password:String, c_password:String, cicle_id: String){
+    return new Promise((resolve) => {
+      this.http.post(this.apiUrl+"/register", {
+        name: name,
+        surname: surname,  
+        email: email,
+        password: password,
+        c_password: c_password,
+        cicle_id: cicle_id,
+      }).subscribe(
+        (data) => {
+          resolve(data);
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
+    });
+  }
+
   login(email:String, password:String) {
     return new Promise((resolve) => {
       this.http
