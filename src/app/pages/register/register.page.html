@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar no-border trasnlucent>
-    <ion-title>REGISTRO</ion-title>
+    <ion-title>REGISTER</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -14,30 +14,39 @@
     <ion-label>
       Nombre
     </ion-label>
-  <ion-input type="text" [(ngModel)]="user.name" name="name"></ion-input>
+  <ion-input type="text" [(ngModel)]="name" name="name"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label>
       Apellidos
     </ion-label>
-  <ion-input type="text" [(ngModel)]="user.surname"></ion-input>
+  <ion-input type="text" [(ngModel)]="surname"></ion-input>
   </ion-item>
-  <!--<ion-item>
+  <ion-item>
     <ion-label>
       Email
     </ion-label>
-  <ion-input type="text" [(ngModel)]="user.email" name="email"></ion-input>
+  <ion-input type="text" [(ngModel)]="email" name="email"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label>
-      Password
+      Contraseña
     </ion-label>
-  <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+  <ion-input type="password" [(ngModel)]="password"></ion-input>
   </ion-item>
   <ion-item>
+    <ion-label>
+      Confirmacion contraseña
+    </ion-label>
+  <ion-input type="password" [(ngModel)]="c_password"></ion-input>
+  </ion-item>
   <ion-item>
-    <ion-select name="Ciclo">
-      <ion-option>Ciclo1</ion-option>
-      <ion-option>Ciclo2</ion-option>
-    </ion-select>-->
+  <!--hacer lista-->
+  <ion-label>Id ciclo: </ion-label>
+  <ion-input type="number" [(ngModel)]="cicle_id"></ion-input>
+  </ion-item>
+  <ion-item>
+  <ion-button size="medium" (click)="registrarUsuario()">Registrarse</ion-button>
+  <ion-button size="medium" href="/login">Login</ion-button>
+  </ion-item>
 </ion-content>
