@@ -20,8 +20,6 @@ export class Tab2Page {
     this.restService.login('raulreyes@gmail.com','123456').then(data => {
       console.log(data);
       this.token = data;
-      console.log("Login realizado");
-      console.log("Token: "+this.token);
     });
   }
 

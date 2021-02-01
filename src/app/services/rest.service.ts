@@ -27,13 +27,13 @@ export class RestService {
   }
 
   getOffers() {
-    var header = new HttpHeaders({ "Content-Type": "application/json"});
+    var header = new HttpHeaders();
+    header.append("Accept", "application/json");
     header.append("Authorization","Bearer " + this.token);
-    console.log("Bearer "+this.token);
     return new Promise((resolve) => {
       this.http.get(this.apiUrl + "/offers", { headers: header}).subscribe(
         (data) => {
-          console.log(data);
+          console.log("Datos: "+data);
           resolve(data);
         },
         (err) => {
