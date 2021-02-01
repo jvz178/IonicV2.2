@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RestService } from '../../services/rest.service';
-
+import { News } from 'src/app/interfaces/news';
 
 @Component({
   selector: 'app-tab1',
@@ -10,7 +10,7 @@ import { RestService } from '../../services/rest.service';
 export class Tab1Page {
 
   // token: any;
-  articles: any;
+  articles: News[]=[];
 
   constructor(public restService: RestService,) {
     // this.hacerLogin();
