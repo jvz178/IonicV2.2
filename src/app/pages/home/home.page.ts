@@ -11,7 +11,7 @@ export class HomePage  {
   articles: any;
 
   constructor(public restService: RestService) {
-    //this.hacerLogin();
+    // this.hacerLogin();
   }
 
   // hacerLogin(){
@@ -25,9 +25,9 @@ export class HomePage  {
   //     .then(data => {
   //       this.articles = data;
   //     });
-  // }
+  }
   
 
-  }
+  
 
 
