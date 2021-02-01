@@ -1,35 +1,18 @@
 <ion-header no-border>
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <ion-title color="primary"> NOTICIAS </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content color="dark">
-  <ion-grid fixed>
-    <ion-row>
-      <ion-col
-        size="12"
-        size-lg="3"
-        size-md="2"
-        size-sm="6"
-        size-xs="12"
-        *ngFor="let article of articles; let i = index"
-      >
-        <ion-card color="dark">
-          <ion-card-header>
-          <ion-card-title>{{ article.title }}</ion-card-title>
-          </ion-card-header>
-          <ion-img *ngIf="article.urlToImage" [src]="article.urlToImage">
-          </ion-img>
-          <ion-card-content>
-            <h1>{{article.cicle_name}}</h1>
-            <p>{{ article.description }}</p>
-            
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+<app-articles [articles]="articles"></app-articles>
+
+ <ion-infinite-scroll threshold="150px" 
+                      (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" 
+                                  loadingText="Cargando noticias...">
+      </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>
 
 

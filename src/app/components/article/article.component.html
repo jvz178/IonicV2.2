@@ -1,0 +1,11 @@
+<ion-card color="dark">
+  <ion-card-header>
+  
+    <ion-card-title>{{ article.title }}</ion-card-title>
+  </ion-card-header>
+  <ion-img *ngIf="article.img" [src]="article.urlToImage"> </ion-img>
+  <ion-card-content>
+    <h1>{{ article.cicle_name }}</h1>
+    <p>{{ article.description }}</p>
+  </ion-card-content>
+</ion-card>
