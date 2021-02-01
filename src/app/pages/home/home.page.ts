@@ -11,21 +11,21 @@ export class HomePage  {
   articles: any;
 
   constructor(public restService: RestService) {
-    this.hacerLogin();
+    //this.hacerLogin();
   }
 
-  hacerLogin(){
-    this.restService.login().then(data => {
-      this.token = data;
-    })
-  }
+  // hacerLogin(){
+  //   this.restService.login().then(data => {
+  //     this.token = data;
+  //   })
+  // }
 
-  obtenerArticles(){
-    this.restService.getArticles(this.token)
-      .then(data => {
-        this.articles = data;
-      });
-  }
+  // obtenerArticles(){
+  //   this.restService.getArticles(this.token)
+  //     .then(data => {
+  //       this.articles = data;
+  //     });
+  // }
   
 
   }

@@ -18,17 +18,18 @@ export class Tab2Page {
 
   hacerLogin(){
     this.restService.login('raulreyes@gmail.com','123456').then(data => {
-      console.log(data);
+      console.log('Token: ', data);
       this.token = data;
     });
   }
 
   obtenerOfertas(){
-    this.restService.getOffers().then((res: any) => {
-      if (res.sucess){
+    this.restService.getOffers()
+    .then(res => {
+      //if (res.sucess){
         this.offers = res.data;
         console.log(this.offers);
-      }
+      //}
     },
     (error) =>{
       console.error(error);
