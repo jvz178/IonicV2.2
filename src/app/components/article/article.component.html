@@ -3,9 +3,11 @@
   
     <ion-card-title>{{ article.title }}</ion-card-title>
   </ion-card-header>
-  <ion-img *ngIf="article.img" [src]="article.urlToImage"> </ion-img>
+ <img src="assets/img/{{article.image}}" width="50" height="50" />
   <ion-card-content>
-    <h1>{{ article.cicle_name }}</h1>
+  <ion-datetime value="{{article.created_at}}" display-format="DD/MM/YYYY"></ion-datetime>
+
+
     <p>{{ article.description }}</p>
   </ion-card-content>
 </ion-card>
