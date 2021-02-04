@@ -9,13 +9,12 @@ import { RestService } from '../../services/rest.service';
 export class Tab2Page {
 
   token: any;
-  filtro: any;
   offers: any;
+  cicles: any;
   df=0;
   contador=0;
   contador2=0;
   clIDs = [];
-  clIDs2 = [];
 
   constructor(public restService: RestService,) {
     this.hacerLogin();
@@ -48,9 +47,6 @@ export class Tab2Page {
         });
         this.offers = this.clIDs;
       }
-        // this.filtro.filter( (offer: { cicle_id: number; }) => {
-        //   return offer.cicle_id == 5;
-        // })
     },
     );
   }
@@ -62,16 +58,12 @@ export class Tab2Page {
     this.obtenerOfertas();
   }
 
-  //Descartado pero podría ser útil...
   obtenerCicloIds(){
-    this.restService.getOffers()
+    this.contador2=0;
+    this.restService.getCicles()
     .then((res: any) => {
-
-      res.data.forEach((id2: any) => {
-        this.clIDs2[this.contador2]=id2.cicle_id;
-        this.contador2=this.contador2+1;
-      });
-      console.log(this.clIDs2);
+      this.cicles=res.data;
+      console.log(this.cicles);
     })
   }
 }

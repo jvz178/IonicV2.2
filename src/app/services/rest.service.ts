@@ -42,7 +42,21 @@ export class RestService {
         }
       );
     });
-    
+
+  }
+
+  getCicles(){
+    return new Promise<any>((resolve) => {
+      this.http.get(this.apiUrl + "/cicles"
+      ).subscribe(
+        (data) => {
+          resolve(data);
+        },
+        (err) => {
+          console.log(err)
+        }
+      );
+    });
   }
 
   register(name:String, surname:String, email:String, password:String, c_password:String, cicle_id: String){
