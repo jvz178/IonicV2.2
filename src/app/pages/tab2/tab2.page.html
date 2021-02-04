@@ -4,13 +4,10 @@
     <ion-title color="success">
       OFERTAS
     </ion-title>
-    <ion-select okText="Aceptar" cancelText="Cancelar">
-    <ion-select-option>Todos</ion-select-option>
-    <ion-select-option>Ciclo 1</ion-select-option>
-    <ion-select-option>Ciclo 2</ion-select-option>
-    <ion-select-option>Ciclo 3</ion-select-option>
-    <ion-select-option>Ciclo 4</ion-select-option>
-    <ion-select-option>Ciclo 5</ion-select-option>
+    <ion-select okText="Aceptar" cancelText="Cancelar" [(ngModel)]="df" (ionChange)="onChange(df)">
+    <ion-select-option value=0>Todos</ion-select-option>
+    <ion-select-option value=5>Ciclo 5</ion-select-option>
+    <ion-select-option value=8>Ciclo 8</ion-select-option>
     </ion-select>
   </ion-toolbar>
 </ion-header>
