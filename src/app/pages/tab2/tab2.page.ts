@@ -8,7 +8,7 @@ import { RestService } from '../../services/rest.service';
 })
 export class Tab2Page {
 
-  token: any;
+  //token: any;
   offers: any;
   cicles: any;
   df=0;
@@ -16,18 +16,18 @@ export class Tab2Page {
   contador2=0;
   clIDs = [];
 
-  constructor(public restService: RestService,) {
-    this.hacerLogin();
+  constructor(public restService: RestService) {
+    //this.hacerLogin();
     this.obtenerOfertas();
     this.obtenerCicloIds();
   }
 
-  hacerLogin(){
-    this.restService.login('raulreyes@gmail.com','123456').then(data => {
-      console.log('Token: ', data);
-      this.token = data;
-    });
-  }
+  // hacerLogin(){
+  //   this.restService.login('raulreyes@gmail.com','123456').then(data => {
+  //     console.log('Token: ', data);
+  //     this.token = data;
+  //   });
+  // }
 
   obtenerOfertas(){
     this.restService.getOffers()
