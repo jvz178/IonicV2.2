@@ -41,18 +41,11 @@
   <ion-input type="password" [(ngModel)]="c_password"></ion-input>
   </ion-item>
   <ion-item>
-  <!--hacer lista-->
   <ion-label>Id ciclo: </ion-label>
-  <ion-input type="number" [(ngModel)]="cicle_id"></ion-input>
+  <ion-select okText="Aceptar" cancelText="Cancelar" [(ngModel)]="cicle_id">
+    <ion-select-option *ngFor="let cicle2 of cicles2" value="{{cicle2.id}}">{{cicle2.name}} ({{cicle2.id}})</ion-select-option>
+  </ion-select>
   </ion-item>
-  <!--<ul class="list-group">
-  <li class="list-group item">
-  <h2>1</h2>
-  </li>
-  <li class="list-group item">
-  <h2>2</h2>
-  </li>
-  </ul>-->
   <ion-item>
   <ion-button size="medium" (click)="registrarUsuario()">Registrarse</ion-button>
   <ion-button size="medium" href="/login">Login</ion-button>

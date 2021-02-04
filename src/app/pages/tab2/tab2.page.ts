@@ -66,4 +66,6 @@ export class Tab2Page {
       console.log(this.cicles);
     })
   }
+
+  
 }

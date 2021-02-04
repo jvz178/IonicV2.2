@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { RestService } from 'src/app/services/rest.service';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
@@ -9,6 +10,8 @@ import { RestService } from 'src/app/services/rest.service';
 })
 export class RegisterPage implements OnInit {
 
+  cicles2: any;
+  contador3= 0;
   name: any;
   surname: any;
   email: any;
@@ -16,7 +19,9 @@ export class RegisterPage implements OnInit {
   c_password: any;
   cicle_id: any;
 
-  constructor(public restService: RestService, private router:Router, private ac: AlertController) { }
+  constructor(public restService: RestService, private router:Router, private ac: AlertController) { 
+    this.obtenerCiclos();
+  }
 
   ngOnInit() {
   }
@@ -33,6 +38,15 @@ export class RegisterPage implements OnInit {
     })
   }
 
+  obtenerCiclos(){
+    this.contador3=0;
+    this.restService.getCicles()
+    .then((res: any) => {
+      this.cicles2=res.data;
+      console.log(this.cicles2);
+    })
+  }
+  
   // async alerta(){
   //     const alert = await this.ac.create({
   //     header: 'Se produjo un error',
