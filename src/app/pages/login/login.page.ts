@@ -30,9 +30,13 @@ export class LoginPage implements OnInit {
       //Para obtener el token del usuario que se loguea
       this.restService.setToken(this.token.data.token);
       //
-      if(data){
+      if(this.token.success){
         console.log('Login correcto');
-        this.router.navigateByUrl('/tabs/tab1');;
+        if(this.token.data.type=="client"){
+          this.router.navigateByUrl('/tabs/tab1');
+        }else{
+          this.router.navigateByUrl('/tabs/tab2');
+        }
         
       }
       // else {
