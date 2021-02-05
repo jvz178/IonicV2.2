@@ -11,12 +11,16 @@ export class Tab1Page {
 
   // token: any;
   articles: News[]=[];
+  cicles: any;
+  df=0;
+  contador=0;
+  contador2=0;
 
   constructor(public restService: RestService,) {
     // this.hacerLogin();
     this.obtenerArticles();
-   
-    
+    this.obtenerCicloIds();
+  
   }
  
   // hacerLogin(){
@@ -38,6 +42,15 @@ export class Tab1Page {
         console.error(error);
       }
      );}
+
+     obtenerCicloIds(){
+      this.contador2=0;
+      this.restService.getCicles()
+      .then((res: any) => {
+        this.cicles=res.data;
+        console.log(this.cicles);
+      })
+    }
   }
   
 
