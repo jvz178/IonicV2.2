@@ -30,7 +30,7 @@ export class Tab2Page {
   // }
 
   obtenerOfertas(){
-    this.restService.getOffers(this.restService.getToken())
+    this.restService.getOffers()
     .then((res: any) => {
       this.offers=res.data;
       console.log(this.offers);
