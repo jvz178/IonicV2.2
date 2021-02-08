@@ -10,6 +10,7 @@ export class Tab2Page {
 
   //token: any;
   offers: any;
+  images: any;
   cicles: any;
   df=0;
   contador=0;
@@ -19,7 +20,7 @@ export class Tab2Page {
   constructor(public restService: RestService) {
     //this.hacerLogin();
     this.obtenerOfertas();
-    this.obtenerCicloIds();
+    //this.obtenerCicloIds();
   }
 
   // hacerLogin(){
@@ -58,14 +59,23 @@ export class Tab2Page {
     this.obtenerOfertas();
   }
 
-  obtenerCicloIds(){
-    this.contador2=0;
-    this.restService.getCicles()
-    .then((res: any) => {
-      this.cicles=res.data;
-      console.log(this.cicles);
+  obtIm(){
+    this.restService.getCicles().then((res:any) => {
+      this.images=res.data.img;
+      console.log("IMAGEN");
+      console.log(this.images);
+      console.log("IMAGEN");
     })
   }
+
+  // obtenerCicloIds(){
+  //   this.contador2=0;
+  //   this.restService.getCicles()
+  //   .then((res: any) => {
+  //     this.cicles=res.data;
+  //     console.log(this.cicles);
+  //   })
+  // }
 
   
 }
